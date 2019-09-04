@@ -77,7 +77,7 @@ class _$StoriesSerializer implements StructuredSerializer<Stories> {
       result
         ..add('title')
         ..add(serializers.serialize(object.title,
-            specifiedType: const FullType(int)));
+            specifiedType: const FullType(String)));
     }
     if (object.descendants != null) {
       result
@@ -143,7 +143,7 @@ class _$StoriesSerializer implements StructuredSerializer<Stories> {
           break;
         case 'title':
           result.title = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'parts':
           result.parts.replace(serializers.deserialize(value,
@@ -184,7 +184,7 @@ class _$Stories extends Stories {
   @override
   final String url;
   @override
-  final int title;
+  final String title;
   @override
   final BuiltList<int> parts;
   @override
@@ -339,9 +339,9 @@ class StoriesBuilder implements Builder<Stories, StoriesBuilder> {
   String get url => _$this._url;
   set url(String url) => _$this._url = url;
 
-  int _title;
-  int get title => _$this._title;
-  set title(int title) => _$this._title = title;
+  String _title;
+  String get title => _$this._title;
+  set title(String title) => _$this._title = title;
 
   ListBuilder<int> _parts;
   ListBuilder<int> get parts => _$this._parts ??= new ListBuilder<int>();

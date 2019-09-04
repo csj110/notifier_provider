@@ -35,7 +35,7 @@ abstract class Stories implements Built<Stories, StoriesBuilder> {
   String get url;
 
   @nullable
-  int get title;
+  String get title;
 
   BuiltList<int> get parts;
 
